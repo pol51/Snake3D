@@ -1,5 +1,6 @@
 #include <GL/glut.h>
-#include "volumes.h"
+
+#include <volumes.h>
 
 void addCube(GLfloat x)
 {

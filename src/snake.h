@@ -1,7 +1,7 @@
 #ifndef __SNAKE_H
 #define __SNAKE_H
 
-#include "points.h"
+#include <points.h>
 
 #include <list>
 

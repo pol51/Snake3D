@@ -1,8 +1,8 @@
-#include "points.h"
-#include "snake.h"
-#include "texture_manager/texture.h"
-#include "timer/tempo.h"
-#include "volumes.h"
+#include <points.h>
+#include <snake.h>
+#include <tempo.h>
+#include <volumes.h>
+#include <texture_manager/texture.h>
 
 #include <GL/glut.h>
 
@@ -10,7 +10,7 @@
 #include <cmath>
 #include <cstdlib>
 
-#define TEX_DIR		"./data/"
+#define TEX_DIR		"../data/"
 #define TEX_GRASS	TEX_DIR "grass.bmp"
 #define TEX_SNAKE	TEX_DIR "snake.bmp"
 #define TEX_FOOD	TEX_DIR	"food.bmp"
@@ -66,7 +66,7 @@ int win_sub;
 //table des sinus et cosinus
 GLfloat Sin[360], Cos[360];
 
-//lumières
+//lumieres
 GLfloat L0pos[] = {-3.0, 1.0, 3.0};
 GLfloat L0dif[] = { 0.7, 0.9, 0.7};
 GLfloat L1pos[] = { 3.0, 1.0, 3.0};
@@ -83,7 +83,7 @@ int main(int argc, char **argv)
 	//initialisation des nombres alleatoires
 	srand(time(NULL));
 	
-	//précalcul de la table des sinus et cosinus
+  //precalcul de la table des sinus et cosinus
 	calcTableCosSin();
 	
 	//initialisation de glut et creation de la fenetre principale
@@ -106,7 +106,7 @@ int main(int argc, char **argv)
 	gluPerspective(45.0, R_LH, 0.5, 16);
 	glMatrixMode(GL_MODELVIEW);
 
-	//paramétrage des lumières
+  //parametrage des lumieres
 	glShadeModel(GL_SMOOTH);
 	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
 	glEnable(GL_LIGHTING);
@@ -117,7 +117,7 @@ int main(int argc, char **argv)
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, L1dif);
 	glLightfv(GL_LIGHT1, GL_SPECULAR, L1dif); 
 	
-	//paramétrage du matériau
+  //parametrage du materiau
 	glMaterialfv(GL_FRONT, GL_SPECULAR, Mspec);
 	glMaterialf(GL_FRONT, GL_SHININESS, Mshiny);
 	

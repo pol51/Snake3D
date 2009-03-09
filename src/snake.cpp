@@ -1,4 +1,4 @@
-#include "snake.h"
+#include <snake.h>
 
 #include <ctime>
 #include <cstdio>
@@ -62,7 +62,7 @@ void Snake::move()
 		_mort = (_snake.front() == *it) || _mort;
 	}
 	
-	//nourriture attrappée
+  //nourriture attrappee
 	if (_snake.front() == _food)
 	{
 		for (int i = _incBase;  --i >= 0; )

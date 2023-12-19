@@ -1,12 +1,14 @@
-CMake_Minimum_Required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.10)
 
-Project(Snake3D)
-Set(EXECUTABLE_OUTPUT_PATH bin/${CMAKE_BUILD_TYPE})
+project(Snake3D)
 
-Include_Directories(${SDL_INCLUDE_DIR} src)
+set(OpenGL_GL_PREFERENCE GLVND)
+find_package(OpenGL REQUIRED)
+find_package(GLUT REQUIRED)
 
-Link_Libraries (glut GL GLU)
+include_directories(${SDL_INCLUDE_DIR} src)
 
-File(GLOB_RECURSE source_files src/*)
+file(GLOB_RECURSE source_files src/*)
 
-Add_Executable(Snake3D ${source_files})
+add_executable(${PROJECT_NAME} ${source_files})
+target_link_libraries(${PROJECT_NAME} OpenGL::OpenGL OpenGL::GLU GLUT::GLUT)
